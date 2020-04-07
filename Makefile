@@ -4,7 +4,7 @@
 .SUFFIXES: .c
 
 PROG = test
-OBJS = LA1.o la1helpers.o
+OBJS = LAs/LA1.o LAs/la1helpers.o
 REBUILDABLES = $(OBJS) $(PROG)
 CFLAGS = -Wall -pedantic -std=c11 -ggdb
 CC = gcc
