@@ -3,7 +3,7 @@
 
 .SUFFIXES: .c
 
-SRCS = LA1.c la1helpers.c
+SRCS = ~/Downloads/Dartmouth/Coding Questions in C/LAsLA1.c ~/Downloads/Dartmouth/Coding Questions in C/LAsla1helpers.c
 OBJS = $(SRCS:.c=.o)
 OUTPUT = test
 
