@@ -6,16 +6,15 @@
 PROG = test
 OBJS = LA1.o la1helpers.o
 REBUILDABLES = $(OBJS) $(PROG)
-CFLAGS = -Wall -pedantic -std=c11 -ggdb
 CC = gcc
 MAKE = make
 
-$(PROG): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+$(PROG) : $(OBJS)
+	$(CC) -g -o $@ $^
 
 $.o : $.c
-	$(CC) $(CFLAGS) -o $@ -c $<
-	
+	$(CC) -g -o $@ -c $<
+
 la1helpers.o: la1helpers.h
 LA1.o: la1helpers.h
 
