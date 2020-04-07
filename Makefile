@@ -13,6 +13,9 @@ $(LINK_TARGET): $(OBJS)
 $.o: $.c
 	gcc -g -o $@ -c $<
 
+Main.o : LongAssignment.h
+LongAssignment.o : LongAssignment.h
+
 .PHONY: clean all
 
 clean:
