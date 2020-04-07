@@ -3,17 +3,13 @@
 
 .SUFFIXES: .c
 
-PROG = test
-OBJS = LA1.o la1helpers.o
+SRCS = LA1.c la1helpers.c
+OBJS = $(SRCS:.c=.o)
 REBUILDABLES = $(OBJS) $(PROG)
-CC = gcc
-MAKE = make
+OUTPUT = test
 
 $(PROG) : $(OBJS)
-	$(CC) -g -o $@ $^
-
-$.o : $.c
-	$(CC) -g -o $@ -c $<
+	gcc -o $(OUTPUT) $(OBJS)
 
 la1helpers.o: la1helpers.h
 LA1.o: la1helpers.h
