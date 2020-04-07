@@ -9,7 +9,7 @@ REBUILDABLES = $(OBJS) $(PROG)
 OUTPUT = test
 
 test : $(OBJS)
-	gcc -o $(OUTPUT) $(OBJS)
+	cc -o $(OUTPUT) $(OBJS)
 
 la1helpers.o: la1helpers.h
 LA1.o: la1helpers.h
