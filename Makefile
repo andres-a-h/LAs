@@ -1,10 +1,10 @@
 # Makefile for Long Assignment 1
 # Andres Hernandez, Dartmouth College, Fall 2018
 
-.SUFFIXES: .c
+#.SUFFIXES: .c
 
 PROG = test
-OBJS = LAs/LA1.o LAs/la1helpers.o
+OBJS = LA1.o la1helpers.o
 REBUILDABLES = $(OBJS) $(PROG)
 CFLAGS = -Wall -pedantic -std=c11 -ggdb
 CC = gcc
