@@ -3,18 +3,18 @@
 
 .SUFFIXES: .c
 
-LINK_TARGET = test
+PROG = test
 OBJS = LA1.o la1helpers.o
-REBUILDABLES = $(OBJS) $(LINK_TARGET)
+REBUILDABLES = $(OBJS) $(PROG)
+CFLAGS = -Wall -pedantic -std=c11 -ggdb
+CC = gcc
+MAKE = MAKE
 
-$(LINK_TARGET): $(OBJS)
-	gcc -g -o $(@) $^
+$(PROG): $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
 
-$.o: $.c
-	gcc -g -o $@ -c $<
-
-Main.o : LongAssignment.h
-LongAssignment.o : LongAssignment.h
+la1helpers.o: la1helpers.h
+LA1.o: la1helpers.h
 
 .PHONY: clean all
 
@@ -22,5 +22,5 @@ clean:
 	rm -f $(REBUILDABLES)
 	echo Clean done
 
-all: $(LINK_TARGET)
+all: $(PROG)
 	echo All done
