@@ -8,7 +8,7 @@ OBJS = $(SRCS:.c=.o)
 REBUILDABLES = $(OBJS) $(PROG)
 OUTPUT = test
 
-$(PROG) : $(OBJS)
+test : $(OBJS)
 	gcc -o $(OUTPUT) $(OBJS)
 
 la1helpers.o: la1helpers.h
