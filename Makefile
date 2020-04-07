@@ -8,10 +8,10 @@ OBJS = $(SRCS:.c=.o)
 OUTPUT = test
 
 test : $(OBJS)
-	gcc -o $(OUTPUT) $(OBJS)
+	gcc -g -o $@ $^
 
-la1helpers.o: la1helpers.h
-LA1.o: la1helpers.h
+$.o : $.c
+	gcc -g -o $@ -c $<
 
 .PHONY: clean all
 
@@ -19,5 +19,5 @@ clean:
 	rm -f $(OBJS) $(OUTPUT)
 	echo Clean done
 
-all: $(PROG)
+all: test
 	echo All done
