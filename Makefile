@@ -5,7 +5,6 @@
 
 SRCS = LA1.c la1helpers.c
 OBJS = $(SRCS:.c=.o)
-REBUILDABLES = $(OBJS) $(PROG)
 OUTPUT = test
 
 test : $(OBJS)
@@ -17,7 +16,7 @@ LA1.o: la1helpers.h
 .PHONY: clean all
 
 clean:
-	rm -f $(REBUILDABLES)
+	rm -f $(OBJS) $(OUTPUT)
 	echo Clean done
 
 all: $(PROG)
